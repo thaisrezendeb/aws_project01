@@ -40,6 +40,9 @@ dependencies {
 	compile group: 'javax.validation', name: 'validation-api', version: '2.0.1.Final'
 
 	compile group: 'com.amazonaws', name: 'aws-java-sdk-sns', version: '1.11.613'
+	compile group: 'com.amazonaws', name: 'aws-java-sdk-s3', version: '1.11.613'
+	compile group: 'com.amazonaws', name: 'aws-java-sdk-sqs', version: '1.11.613'
+	compile group: 'com.amazonaws', name: 'amazon-sqs-java-messaging-lib', version: '1.0.8'
 
 	testImplementation('org.springframework.boot:spring-boot-starter-test') {
 		exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
@@ -52,7 +55,7 @@ test {
 
 bootJar {
 	baseName = 'aws_project01'
-	version = '0.4.0'
+	version = '0.5.0'
 }
 
 task unpack(type: Copy) {

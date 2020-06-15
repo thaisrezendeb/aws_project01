@@ -51,7 +51,7 @@ public class ProductController {
     public ResponseEntity<Product> updateProduct(@RequestBody @Valid Product product, @PathVariable("id") long id) {
         if (productRepository.existsById(id)) {
             product.setId(id);
-            productPublisher.publishProductEvent(product, EventType.PRODUCT_UPDATE, "doralice");
+            productPublisher.publishProductEvent(product, EventType.PRODUCT_UPDATED, "doralice");
             return new ResponseEntity<Product>(productRepository.save(product), HttpStatus.OK);
         }
         else {
