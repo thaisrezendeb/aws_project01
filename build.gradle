@@ -39,6 +39,8 @@ dependencies {
 	compile group: 'org.springframework', name: 'spring-jms', version: '5.2.6.RELEASE'
 	compile group: 'javax.validation', name: 'validation-api', version: '2.0.1.Final'
 
+	compile group: 'com.amazonaws', name: 'aws-java-sdk-sns', version: '1.11.613'
+
 	testImplementation('org.springframework.boot:spring-boot-starter-test') {
 		exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
 	}
@@ -50,7 +52,7 @@ test {
 
 bootJar {
 	baseName = 'aws_project01'
-	version = '0.3.0'
+	version = '0.4.0'
 }
 
 task unpack(type: Copy) {
